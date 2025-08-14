@@ -58,8 +58,11 @@ const MAIN_BUNDLE_CONFIG = {
       format: "umd",
     },
     {
-      file: "dist/index.mjs",
       format: "es",
+      entryFileNames: "[name].mjs",
+      preserveModules: true,
+      preserveModulesRoot: "lib",
+      dir: "dist",
     },
   ],
   plugins: [json(), typescript(), license(LICENSE_CONFIG)],
